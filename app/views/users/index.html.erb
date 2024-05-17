@@ -1,0 +1,15 @@
+<section>
+  <% if @users.blank? %>
+    <h1> There are no users in the system (Join as a User)</h1>
+  <% else %>
+    <h1> List of Users </h1>
+    <ul>
+      <% @users.each do |user| %>
+        <li>
+          <p><strong>Name:</strong> <%= user.name %> </p>
+          <p><strong>Age:</strong> <%= user.age %> </p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
