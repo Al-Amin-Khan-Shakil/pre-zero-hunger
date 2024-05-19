@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title"><%= @post.title %></h1>
+    <p class="card-text"><%= @post.description %></p>
+    <p><strong>Created At:</strong> <%= @post.created_at.strftime("%B %d, %Y %H:%M") %></p>
+    <p><strong>Updated At:</strong> <%= @post.updated_at.strftime("%B %d, %Y %H:%M") %></p>
+
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %>
+    <%= link_to 'Back to Posts', posts_path, class: "btn btn-secondary" %>
+    <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </div>
+</div>
