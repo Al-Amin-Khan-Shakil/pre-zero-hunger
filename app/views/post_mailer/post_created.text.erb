@@ -1,5 +1,7 @@
 Welcome <%= @user.name %> to Send Email in Rails 7 App!
 =======================================================
-You have successfully get the link of our new post! <%= @post.title %>
-Your username is: <%= @user.name %>.
+You have successfully get the link of our new post!<br>
+<%= @post.title %><br>
+<%= truncate(@post.description, length: 100) %><br>
+
 Please share the post on your social platform!
