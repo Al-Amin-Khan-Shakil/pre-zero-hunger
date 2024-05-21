@@ -11,7 +11,7 @@ module PostNotifier
     return unless @post.persisted?
 
     User.where.not(id: @post.user_id).each do |user|
-      PostMailer.post_created(user).deliver_later
+      PostMailer.post_created(user, @post).deliver_later
     end
   end
 end
