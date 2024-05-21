@@ -8,8 +8,13 @@
     <ul class="list-group">
       <% @users.each do |user| %>
         <li class="list-group-item">
+        <div>
           <p><strong>Name:</strong> <%= user.name %></p>
           <p><strong>Age:</strong> <%= user.age %></p>
+        </div>
+        <div>
+          <%= button_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+        </div>
         </li>
       <% end %>
     </ul>
