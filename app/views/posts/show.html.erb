@@ -1,6 +1,9 @@
 <div class="card">
   <div class="card-body">
     <h1 class="card-title"><%= @post.title %></h1>
+    <% if @post.image.attached? %>
+      <%= image_tag @post.image, alt: @post.title, class: "card-img-top" %>
+    <% end %>
     <p class="card-text"><%= @post.description %></p>
     <p><strong>Created At:</strong> <%= @post.created_at.strftime("%B %d, %Y %H:%M") %></p>
     <p><strong>Updated At:</strong> <%= @post.updated_at.strftime("%B %d, %Y %H:%M") %></p>
