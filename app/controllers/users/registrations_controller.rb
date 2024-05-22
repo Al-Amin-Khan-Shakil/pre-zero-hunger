@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # Override the method for updating resource
   def update_resource(resource, params)
     if params[:password].blank? && params[:password_confirmation].blank?
-      resource.update_without_password(params)
+      resource.update_without_password(params.except(:current_password))
     else
       resource.update_with_password(params)
     end
