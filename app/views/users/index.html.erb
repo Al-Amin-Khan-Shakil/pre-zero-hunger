@@ -1,0 +1,22 @@
+<section class="container mt-4">
+  <% if @users.blank? %>
+    <div class="alert alert-warning" role="alert">
+      <h2>There are no users in the system. <a href="<%= new_user_registration_path %>" class="alert-link">Join as a User</a></h2>
+    </div>
+  <% else %>
+    <h2 class="mb-4">List of Users</h2>
+    <ul class="list-group">
+      <% @users.each do |user| %>
+        <li class="list-group-item">
+        <div>
+          <p><strong>Name:</strong> <%= user.name %></p>
+          <p><strong>Age:</strong> <%= user.age %></p>
+        </div>
+        <div>
+          <%= button_to 'Delete', user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+        </div>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
