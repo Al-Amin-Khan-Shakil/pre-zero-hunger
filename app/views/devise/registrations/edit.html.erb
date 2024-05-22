@@ -32,6 +32,11 @@
   </div>
 
   <div class="mb-3">
+    <%= f.label :avatar, class: "form-label" %><br />
+    <%= f.file_field :avatar, class: "btn" %>
+  </div>
+
+  <div class="mb-3">
     <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -9,6 +9,11 @@
       <% @users.each do |user| %>
         <li class="list-group-item">
         <div>
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar %>
+          <% end %>
+        </div>
+        <div>
           <p><strong>Name:</strong> <%= user.name %></p>
           <p><strong>Age:</strong> <%= user.age %></p>
         </div>
