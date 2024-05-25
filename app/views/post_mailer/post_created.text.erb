@@ -1,7 +1,13 @@
 Welcome <%= @user.name %> to Send Email in Rails 7 App!
 =======================================================
-You have successfully get the link of our new post!<br>
-<%= @post.title %><br>
-<%= truncate(@post.description, length: 100) %><br>
+
+You have successfully got the link of our new post!
+---------------------------------------------------
+Title: <%= @post.title %>
+Description: <%= truncate(@post.description, length: 100) %>
+
+<% if @post.image.attached? %>
+Image URL: <%= @post_image_url %>
+<% end %>
 
 Please share the post on your social platform!
